@@ -1,0 +1,25 @@
+name: Houz Hatz Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      SUPABASE_ACCESS_TOKEN: sbp_275ddcfc92e111dde0a843850aaba141e85739cd
+      SUPABASE_DB_PASSWORD: lm8989LM8989
+      SUPABASE_PROJECT_ID: womqqsyjlbrqasiozyix
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Link Supabase project
+        run: supabase link --project-ref $SUPABASE_PROJECT_ID
+      - name: Push database changes
+        run: supabase db push
