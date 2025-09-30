@@ -3,7 +3,7 @@ name: Houz Hatz Deploy
 on:
   push:
     branches:
-      - main
+      - main   # Deploy whenever you push to main
 
 jobs:
   deploy:
@@ -15,11 +15,22 @@ jobs:
       SUPABASE_PROJECT_ID: womqqsyjlbrqasiozyix
 
     steps:
+      # Step 1: Checkout your repository
       - uses: actions/checkout@v3
+
+      # Step 2: Install Supabase CLI
       - uses: supabase/setup-cli@v1
         with:
           version: latest
+
+      # Step 3: Link your Supabase project
       - name: Link Supabase project
         run: supabase link --project-ref $SUPABASE_PROJECT_ID
+
+      # Step 4: Push database migrations or schema changes
       - name: Push database changes
         run: supabase db push
+
+      # Step 5: Deploy your Edge Function (Houz Hatz frontend)
+      - name: Deploy Edge Function (web)
+        run: supabase functions deploy web --project-ref $SUPABASE_PROJECT_ID
