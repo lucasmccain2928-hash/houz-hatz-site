@@ -3,7 +3,7 @@ name: Houz Hatz Deploy
 on:
   push:
     branches:
-      - main   # Deploy whenever you push to main
+      - main
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
       SUPABASE_PROJECT_ID: womqqsyjlbrqasiozyix
 
     steps:
-      # Step 1: Checkout your repository
+      # Step 1: Checkout your repo
       - uses: actions/checkout@v3
 
       # Step 2: Install Supabase CLI
@@ -23,14 +23,20 @@ jobs:
         with:
           version: latest
 
-      # Step 3: Link your Supabase project
+      # Step 3: Link to your Supabase project
       - name: Link Supabase project
         run: supabase link --project-ref $SUPABASE_PROJECT_ID
 
-      # Step 4: Push database migrations or schema changes
+      # Step 4: Push any database updates
       - name: Push database changes
         run: supabase db push
 
-      # Step 5: Deploy your Edge Function (Houz Hatz frontend)
+      # Step 5: Deploy your Edge Function (frontend)
       - name: Deploy Edge Function (web)
         run: supabase functions deploy web --project-ref $SUPABASE_PROJECT_ID
+
+      # Step 6: Post-deploy check (confirm live site)
+      - name: Verify live site
+        run: |
+          echo "Checking live site status..."
+          curl -I https://womqqsyjlbrqasiozyix.functions.supabase.co/web || exit 1
