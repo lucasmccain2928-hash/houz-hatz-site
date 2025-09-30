@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Houz Hatz Roofing</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Hero Banner -->
+  <header class="hero"></header>
+
+  <!-- Navigation Tabs -->
+  <nav class="tab-bar">
+    <button class="tab active" data-tab="about">About</button>
+    <button class="tab" data-tab="services">Services</button>
+    <button class="tab" data-tab="gallery">Gallery</button>
+    <button class="tab" data-tab="social">Social</button>
+    <button class="tab" data-tab="schedule">Schedule Appointment</button>
+  </nav>
+
+  <main id="tab-content">
+
+    <!-- ABOUT -->
+    <section id="about" class="tab-section active">
+      <h2>About Houz Hatz Roofing</h2>
+      <div class="about-box">
+        <p>
+          At HouzHatz, we believe a roof is more than just shingles—it’s protection, comfort, and peace of mind for you and your family.
+          Our mission is to combine quality materials with skilled workmanship while providing transparent, trustworthy service every step of the way.
+          Whether it’s a small repair or a complete replacement, our goal is to deliver roofing solutions that stand strong against the elements and stand true to our word.
+        </p>
+        <p class="tagline">Strong roofs. Safe homes. Lasting peace of mind.</p>
+      </div>
+
+      <div class="testimonials">
+        <h3>What Our Customers Say</h3>
+        <div class="testimonial fade">
+          <p>"The Houz Hatz team was professional, quick, and the quality was top-notch. My new roof looks incredible!"</p>
+          <span>– Sarah L., Danville KY</span>
+        </div>
+        <div class="testimonial fade">
+          <p>"They treated my home like their own. Honest pricing, excellent work, and great communication all the way through."</p>
+          <span>– James T., Perryville KY</span>
+        </div>
+        <div class="testimonial fade">
+          <p>"After the storm, I called Houz Hatz and they had my roof repaired in no time. Couldn’t be happier with their service!"</p>
+          <span>– Maria G., Harrodsburg KY</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="tab-section">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+
+        <div class="card service-card">
+          <img src="images/roof_shingle.jpg" alt="Roofing" class="service-img" />
+          <h3>Roofing</h3>
+          <ul>
+            <li>Architectural / Dimensional Shingles</li>
+            <li>Metal Roofing Panels</li>
+            <li>Roof Inspections & Maintenance</li>
+          </ul>
+          <p>Shingles, metal roofing, and expert installation.</p>
+        </div>
+
+        <div class="card service-card">
+          <img src="images/gutter.jpg" alt="Gutters" class="service-img" />
+          <h3>Gutters</h3>
+          <ul>
+            <li>Seamless Aluminum Gutters</li>
+            <li>Gutter Guards & Leaf Protection</li>
+            <li>Gutter Cleaning & Repair</li>
+          </ul>
+          <p>Installation, cleaning, and repair to protect your foundation.</p>
+        </div>
+
+        <div class="card service-card">
+          <img src="images/siding.jpg" alt="Siding" class="service-img" />
+          <h3>Siding</h3>
+          <ul>
+            <li>Vinyl Siding Install & Repair</li>
+            <li>Fiber Cement & Composite Panels</li>
+            <li>Exterior Trim & Fascia Work</li>
+          </ul>
+          <p>Durable siding to protect and refresh your home’s look.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="tab-section">
+      <h2>Project Gallery</h2>
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social" class="tab-section">
+      <h2>Follow Us on Facebook</h2>
+      <p class="social-intro fade">
+        We love connecting with our community! Visit our Facebook page for roofing tips, recent project photos, and exclusive offers for local homeowners.
+      </p>
+      <div class="social-icons fade">
+        <a href="https://www.facebook.com/people/HOUZ-HATZ-Roofing/61581340874566/"
+           target="_blank"
+           class="social-link facebook">
+          <i class="fab fa-facebook-f"></i> Visit Our Facebook Page
+        </a>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="tab-section">
+      <h2>Schedule Your Appointment</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Name *" required />
+        <input type="tel" name="phone" placeholder="Phone *" required />
+        <input type="email" name="email" placeholder="Email *" required />
+        <input type="text" name="address" placeholder="Address (optional)" />
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Houz Hatz Roofing | All Rights Reserved</p>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
