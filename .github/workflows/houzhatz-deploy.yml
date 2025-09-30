@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SUPABASE_ACCESS_TOKEN: sbp_275ddcfc92e111dde0a843850aaba141e85739cd
+      SUPABASE_ACCESS_TOKEN: sbp_f83289088213116c0a32a94ba8e3f4e5f41b9012
       SUPABASE_DB_PASSWORD: lm8989LM8989
       SUPABASE_PROJECT_ID: womqqsyjlbrqasiozyix
 
